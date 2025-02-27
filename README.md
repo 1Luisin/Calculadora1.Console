@@ -1,0 +1,1 @@
+Calculadora simples usando a linguagem c# com console. (Sem tratamento de excessão)
