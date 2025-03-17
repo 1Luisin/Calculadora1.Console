@@ -51,7 +51,7 @@
     <ApplicationIcon>ID-Lzxuan_n-__-_plush-_plushie-_plushies-_cute-_pjsk-_projectsekai-_kanade-_kanadeyoisaki-_nightcord.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>helloworld.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

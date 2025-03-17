@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +11,17 @@ namespace helloworld
     internal class Program
     {
 
-        enum Menu { Soma = 1, Subtração, Multiplicação, Divisão, Potência, Raiz, Sair }
+        enum Menu { Soma = 1, Subtração, Multiplicação, Divisão, Potência, Raiz, Sair}
 
         static void Main(string[] args)
         {
-            bool escolheusair = false;
-            while (!escolheusair)        
+          
+            bool naosair = false;
+            while (!naosair)        
             {
-                Console.WriteLine("Seja bem vindo ao calc. :3 \n\nSelecione uma das opções");
-                Console.WriteLine(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Potência\n 6 - Raiz\n 7 - Sair");
+
+                    Console.WriteLine("Seja bem vindo ao calc. :3\n\nSelecione uma das opções");
+                    Console.WriteLine(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Potência\n 6 - Raiz\n 7 - Sair");
 
                 string opcaotxt = Console.ReadLine();
                 Int32 opcaonumber = Int32.Parse(opcaotxt);
@@ -58,7 +61,7 @@ namespace helloworld
                 switch (opcao)
                 {
                     case Menu.Sair:
-                        escolheusair = true;
+                        naosair = true;
                         break;
 
                     case Menu.Soma:
