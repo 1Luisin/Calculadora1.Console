@@ -28,24 +28,40 @@ namespace helloworld
                 Menu opcao = (Menu)opcaonumber;
 
                 Console.WriteLine(opcao);
-                Console.Clear();                
-                
-                if (opcaonumber <= 0)
+                Console.Clear();
+
+
+                try
                 {
-                    Console.Clear();
-                    Console.ForegroundColor= ConsoleColor.Red;
-                    Console.WriteLine("Opção não listada, tente novamente.");
-                    Console.ResetColor();
-                    Console.ReadLine();
-                    Console.Clear();
+                    if (opcaonumber <= 0)
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor= ConsoleColor.Red;
+                        Console.WriteLine("Opção não listada, tente novamente.");
+                        Console.ResetColor();
+                        Console.ReadLine();
+                        Console.Clear();
+                    }
+                    if (opcaonumber > 7)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Erro! Código(E348). \nDigite um número válido.\n"); // Código E348 se refere a um número não listado.
+                        Console.ResetColor();
+                    }
+                    break;
                 }
-                if (opcaonumber > 7) 
+
+                catch (FormatException ex)
                 {
+
                     Console.ForegroundColor = ConsoleColor.Red;
-                       Console.WriteLine("Erro! Código(E348). \nDigite um número válido.\n"); // Código E348 se refere a um número não listado.
+                    Console.WriteLine("Erro: Você não digitou um número válido. Tente novamente." + ex.Message);
                     Console.ResetColor();
-                }
-                switch (opcao)
+                }     
+                
+                    
+                    
+                    switch (opcao)
                 {
                     case Menu.Sair:
                         naosair = true;
