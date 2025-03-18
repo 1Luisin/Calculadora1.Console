@@ -20,19 +20,19 @@ namespace helloworld
             while (!naosair)        
             {
 
-             Console.WriteLine("Seja bem vindo a calculadora. :3\n\nSelecione uma das opções");
-             Console.WriteLine(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Potência\n 6 - Raiz\n 7 - Sair");
+                try {
+                    Console.WriteLine("Seja bem vindo a calculadora. :3\n\nSelecione uma das opções");
+                    Console.WriteLine(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Potência\n 6 - Raiz\n 7 - Sair");
 
-                string opcaotxt = Console.ReadLine();
-                Int32 opcaonumber = Int32.Parse(opcaotxt);
-                Menu opcao = (Menu)opcaonumber;
+                    string opcaotxt = Console.ReadLine();
+                    Int32 opcaonumber = Int32.Parse(opcaotxt);
+                    Menu opcao = (Menu)opcaonumber;
 
-                Console.WriteLine(opcao);
-                Console.Clear();
+                    Console.WriteLine(opcao);
+                    Console.Clear();
 
 
-                try
-                {
+
                     if (opcaonumber <= 0)
                     {
                         Console.Clear();
@@ -48,52 +48,56 @@ namespace helloworld
                         Console.WriteLine("Erro! Código(E348). \nDigite um número válido.\n"); // Código E348 se refere a um número não listado.
                         Console.ResetColor();
                     }
-                    break;
-                }
 
-                catch (FormatException ex)
-                {
 
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Erro: Você não digitou um número válido. Tente novamente." + ex.Message);
-                    Console.ResetColor();
-                }     
-                
-                    
-                    
                     switch (opcao)
-                {
-                    case Menu.Sair:
-                        naosair = true;
-                        Console.Clear();
-                        Console.WriteLine("Volte sempre!\nPressione qualquer tecla para sair do programa. . .");
-                        Console.ReadLine();
-                        break;
+                    {
+                        case Menu.Sair:
+                            naosair = true;
+                            Console.Clear();
+                            Console.WriteLine("Volte sempre!\nPressione qualquer tecla para sair do programa. . .");
+                            Console.ReadLine();
+                            break;
 
-                    case Menu.Soma:
-                        soma();
-                        break;
+                        case Menu.Soma:
+                            soma();
+                            break;
 
-                    case Menu.Subtração:
-                        subt();
-                        break;
+                        case Menu.Subtração:
+                            subt();
+                            break;
 
-                    case Menu.Divisão:
-                        div();
-                        break;
+                        case Menu.Divisão:
+                            div();
+                            break;
 
-                    case Menu.Multiplicação:
-                        mult();
-                        break;
+                        case Menu.Multiplicação:
+                            mult();
+                            break;
 
-                    case Menu.Potência:
-                        pot();
-                        break;
+                        case Menu.Potência:
+                            pot();
+                            break;
 
-                    case Menu.Raiz:
-                        raiz();
-                        break;                    
+                        case Menu.Raiz:
+                            raiz();
+                            break;
+                    }
                 }
+
+                catch (System.FormatException ex)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red; 
+                    Console.WriteLine("Digite somente NÚMEROS:");
+                    Console.ResetColor();
+                    Console.WriteLine("Pressione qualquer tecla para voltar ao menu principal. . .");
+                    Console.ReadLine();
+                    Console.Clear();
+                    
+
+                }
+             
             }
         }
           static void soma() // Função Soma
