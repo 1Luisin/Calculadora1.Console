@@ -97,7 +97,20 @@ namespace helloworld
                     
 
                 }
-             
+                
+                catch (System.OverflowException ex) 
+                {
+
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Digite apenas números compátives com o programa:");
+                    Console.ResetColor();
+                    Console.WriteLine("Pressione qualquer tecla para voltar ao menu principal. . .");
+                    Console.ReadLine();
+                    Console.Clear();
+
+                }
+
             }
         }
           static void soma() // Função Soma
