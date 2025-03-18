@@ -11,7 +11,7 @@ namespace helloworld
     internal class Program
     {
 
-        enum Menu { Soma = 1, Subtração, Multiplicação, Divisão, Potência, Raiz, Sair}
+        enum Menu {Soma = 1, Subtração, Multiplicação, Divisão, Potência, Raiz, Sair}
 
         static void Main(string[] args)
         {
@@ -20,28 +20,15 @@ namespace helloworld
             while (!naosair)        
             {
 
-                    Console.WriteLine("Seja bem vindo ao calc. :3\n\nSelecione uma das opções");
-                    Console.WriteLine(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Potência\n 6 - Raiz\n 7 - Sair");
+             Console.WriteLine("Seja bem vindo a calculadora. :3\n\nSelecione uma das opções");
+             Console.WriteLine(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Potência\n 6 - Raiz\n 7 - Sair");
 
                 string opcaotxt = Console.ReadLine();
                 Int32 opcaonumber = Int32.Parse(opcaotxt);
                 Menu opcao = (Menu)opcaonumber;
 
                 Console.WriteLine(opcao);
-                Console.Clear();
-
-                
-               /* if(opcao == null) 
-                {
-                    Console.Clear();
-                    Console.ForegroundColor= ConsoleColor.Red;
-                    Console.WriteLine("Opção não indentificada, tente novamente.");
-                    Console.ResetColor();
-                    Console.ReadLine();
-                    Console.Clear();
-                }
-                */
-                
+                Console.Clear();                
                 
                 if (opcaonumber <= 0)
                 {
@@ -62,6 +49,9 @@ namespace helloworld
                 {
                     case Menu.Sair:
                         naosair = true;
+                        Console.Clear();
+                        Console.WriteLine("Volte sempre!\nPressione qualquer tecla para sair do programa. . .");
+                        Console.ReadLine();
                         break;
 
                     case Menu.Soma:
